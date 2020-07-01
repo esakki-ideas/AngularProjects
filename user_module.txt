@@ -1,0 +1,84 @@
+ User module
+      - Able to View,Add,Update,Delete users 
+	  - Show users in table with options search by name, sort, pagination
+      - add or edit user  with  Wizard Navigation with route
+	  
+  Expectation:
+		- Use Wizard Navigation with route
+		- Use Enum, Class,Interface	
+		- Use Reactive form
+		- handle custom validation in common file
+	   
+	   Generic Component:
+		  - Table  must be a generic 
+		  - pagination, sort and search  option  its must be a configurable 
+		  - Wizard  must be a configurable 
+	   
+    User List
+         use generic table component and display the user   
+	  
+	 
+       Field :
+	     General Info
+		 ------------
+	      FirstName:
+		      type string;
+			   Validation 
+			       Required, Min -3  Max-15 Char, Alphabets only    
+		  LastName:
+		  	  type string;
+			   Validation 
+			       Required, Min -3  Max-15 Char, Alphabets only    
+		  Full name:
+		  	  type string;
+		      -  non editable   
+			  -  append value from fname and lastname
+		  dob:
+		     type string
+			  Validation 
+			       Required, must be a valid date( >18, <80);
+           age:
+              - find age by  dob;	
+         Contact Info
+		 ------------	
+          Email:
+		     type string;
+			   Validation 
+			       Required, must be a valid domain 		 
+		  phone:
+		     type string;
+			   Validation 
+			       Required, must be a 10 digit (format : xxx-xxx-xxxx)
+	      Social_Info:
+		     - allow user to  add multiple  social info 
+			 - minimum one URL Required
+		     type - example  [ {"url":"facebook/jsnuggets", type:"facebook"]
+			    Validation  -  valid URL/Id , unique 
+		 Skill Info
+		 ------------	
+         Skill Sets 
+			 - allow user to  add multiple  skill  info 
+			 - minimum two URL Required
+			 - skill field must be an auto complete search 
+      			 - if skill not exist in list we have to add that skill into list  
+			type Array - example  [ {"skill":"Angular", rate:"2.5"]
+			     - rate assume out of 10 (u can use start ration also)
+			     - Validation  -  valid URL/Id           
+		 Total Year of Experience:
+		      Calculate from  work experiences 
+	     
+		 Work Experience Info
+		 --------------------	
+		 work experiences:
+		      - Allow user to add Experience details 
+			  - Details must be include , company name, location(city,country), company url, your role, date (from, to), experience(calculate from  date filed)
+		  type Array -  
+		     validation
+			     - Required all field 
+				 - prober validation
+			     - date  validation ( format month/date/year) 
+			     - company_url  - valid format
+				 - Role field must be an auto complete search 
+      			       if role not exist in list we have to add that skill into list
+				 - company name - Min -3  Max-25 Char, Alphabets only    
+  
