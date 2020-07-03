@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+    <div class="form-margin">
+      <div class="col-md-8 col-12">
+        <form #f="ngForm">
+          <div class="container-fluid my-4">
+            <div class="form-row">
+                <div class="form-group col-md-4 col-12">
+                    <label for="socialInfo">Skill Info</label>
+                    <input type="url" name="socialInfo" ngModel class="form-control" minlength="6" required id="socialInfo" placeholder="facebook/jsnuggets">
+                  </div>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-success btn-outline-rounded btn-info"  (click)="goToNext(f)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                <span style="margin-left: 5px;"></span>
+                <button class="btn btn-success btn-outline-rounded btn-info"  (click)="goToPrevious(f)"> Previous <span style="margin-left:12px;" class="glyphicon glyphicon-arrow-left"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

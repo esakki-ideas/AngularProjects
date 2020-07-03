@@ -1,0 +1,31 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+    <div class="form-margin">
+      <div class="col-md-8 col-12">
+        <form [formGroup] = "contactInfoForm">
+          <div class="container-fluid my-4">
+            <div class="form-row">
+              <div class="form-group col-md-4 col-12">
+                <label for="Email">Email</label>
+                <input type="email" name="email" formControlName="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" minlength="6" required id="email" placeholder="john@gmail.com">
+              </div>
+              <div class="form-group col-md-4 col-12">
+                <label for="Phone">Phone</label>
+                <!-- <input type="number" name="phone" formControlName="phone" class="form-control" minlength="10" required id="phone" placeholder="1234567890"> -->
+                <input type="text" name="phone" class="form-control"   appPhoneMask  formControlName="phone" id="phone-number" required placeholder="1234567890">
+            </div>
+              <div class="form-group col-md-4 col-12">
+                <label for="socialInfo">Social Info</label>
+                <input type="url" name="socialInfo" formControlName="socialInfo" class="form-control" pattern="https?://.+" minlength="6" required id="socialInfo" placeholder="facebook/jsnuggets">
+              </div>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-success btn-outline-rounded btn-info"  (click)="goToNext()"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                <span style="margin-left: 5px;"></span>
+                <button class="btn btn-success btn-outline-rounded btn-info"  (click)="goToPrevious()"> Previous <span style="margin-left:12px;" class="glyphicon glyphicon-arrow-left"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
