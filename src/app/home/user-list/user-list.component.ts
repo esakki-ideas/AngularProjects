@@ -21,4 +21,5 @@ export class UserListComponent implements OnInit {
   //   this.getSelectedUserFromList.emit(user);
   // }
 
+
 }

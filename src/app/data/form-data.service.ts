@@ -16,7 +16,7 @@ export class FormDataService {
     this.formData.firstName = user.firstName;
     this.formData.lastName = user.lastName;
     this.formData.fullName = user.fullName;
-    this.formData.dateOfBirth = new Date(user.dateOfBirth);
+    this.formData.dateOfBirth = user.dateOfBirth;
     this.formData.age= user.age;
   };
 
@@ -25,7 +25,7 @@ export class FormDataService {
       firstName: this.formData.firstName,
       lastName : this.formData.lastName,
       fullName : this.formData.fullName,
-      dateOfBirth: this.formData.dateOfBirth.toDateString(),
+      dateOfBirth: this.formData.dateOfBirth,
       age: this.formData.age
     };
     return userInfo;

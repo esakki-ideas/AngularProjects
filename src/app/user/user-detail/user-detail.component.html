@@ -53,7 +53,7 @@
                 <label for="Country">Experience</label>
                 <input type="number" name="experience" [(ngModel)]="formData.experience" class="form-control" disabled required id="experience" placeholder="experience">
               </div>
-              <div class="form-row" *ngFor="let skill of formData.skills; let i = index">
+              <div class="form-group col-md-6 col-12" *ngFor="let skill of formData.skills; let i = index">
                 <div class="form-group col-md-4 col-12">
                     <label for="socialInfo">Skill Info</label>
                     <input type="url" name="socialInfo_{{skill.id}}" [(ngModel)] = "skill.skillInfo" class="form-control" minlength="6" required id="socialInfo" placeholder="facebook/jsnuggets">

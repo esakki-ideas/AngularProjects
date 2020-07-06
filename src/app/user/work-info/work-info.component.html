@@ -19,11 +19,11 @@
               </div>
               <div class="form-group col-md-6 col-12">
                 <label for="fromDate">From Date</label>
-                <input [(ngModel)]="workInfo.fromDate" name="fromDate" ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="From Date" placeholder="From Date">
+                <input [(ngModel)]="workInfo.fromDate" name="fromDate" required ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="From Date" placeholder="From Date">
               </div>
               <div class="form-group col-md-6 col-12">
                 <label for="toDate">To Date</label>
-                <input [(ngModel)]="workInfo.toDate" name="toDate" ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="To Date" placeholder="To Date">
+                <input [(ngModel)]="workInfo.toDate" name="toDate" required ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="To Date" placeholder="To Date">
               </div>
               <div class="form-group col-md-6 col-12">
                 <label for="Country">Role</label>
