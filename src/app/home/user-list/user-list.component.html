@@ -1,11 +1,11 @@
 <div class="container-fluid pt-4">
     <div class="row">
         <div class="offset-sm-8 col-sm-4 col-12">
-            <input type="text"   placeholder="Search Task" class="float-right" />
+            <input type="text"  [(ngModel)]="searchKey" placeholder="Search Task" class="float-right" />
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-4 col-12" *ngFor="let user of users">
+        <div class="col-sm-4 col-12" *ngFor="let user of users | searchPipe : 'fullName' : searchKey">
             <app-user-card [user]= "user" ></app-user-card>
         </div>
     </div>

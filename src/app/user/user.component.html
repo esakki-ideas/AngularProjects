@@ -7,23 +7,24 @@
             <div class="form-row">
               <div class="form-group col-md-4 col-12">
                 <label for="First Name">First Name</label>
-                <input type="text" name="firstName" ngModel (ngModelChange) = "generateFullName(f)" (keypress)="alphabetsOnly($event)"  class="form-control" minlength="3" maxlength="15" required id="First Name" placeholder="First Name">
+                <input ngModel [(ngModel)]="userInfo.firstName"  type="text" name="firstName"  (ngModelChange) = "generateFullName(f)" (keypress)="alphabetsOnly($event)"  class="form-control" minlength="3" maxlength="15" required id="firstname" placeholder="First Name">
+                <!-- <div class="alert alert-danger" [hidden]="firstname.invalid">First Name is required</div> -->
               </div>
               <div class="form-group col-md-4 col-12">
                 <label for="Last Name">Last Name</label>
-                <input type="text" name="lastName" ngModel (ngModelChange) = "generateFullName(f)" (keypress)="alphabetsOnly($event)" class="form-control" minlength="3" maxlength="15" required id="Last Name" placeholder="Last Name">
+                <input ngModel [(ngModel)]="userInfo.lastName"  type="text" name="lastName"  (ngModelChange) = "generateFullName(f)" (keypress)="alphabetsOnly($event)" class="form-control" minlength="3" maxlength="15" required id="Last Name" placeholder="Last Name">
               </div>
               <div class="form-group col-md-4 col-12">
                 <label for="Full Name">Full Name</label>
-                <input type="text" name="fullName" [(ngModel)]="fullName" class="form-control" disabled required id="Full Name" placeholder="Full Name">
+                <input ngModel [(ngModel)]="userInfo.fullName"  type="text" name="fullName" class="form-control" disabled required id="fullName" placeholder="Full Name">
               </div>
               <div class="form-group col-md-4 col-12">
                 <label for="dateOfBirth">Date Of Birth</label>
-                <input name="dateOfBirth" ngModel (ngModelChange) = "generateAge(f)" min= "1940-01-01" type="date" class="form-control" id="dateOfBirth" placeholder="Date Of Birth">
+                <input ngModel  [(ngModel)]="userInfo.dateOfBirth"  type="date" name="dateOfBirth"  (ngModelChange) = "generateAge(f)" min= "1940-01-01"  class="form-control" id="dateOfBirth" placeholder="Date Of Birth">
               </div>
               <div class="form-group col-md-4 col-12">
                 <label for="Age">Age</label>
-                <input type="number" name="Age" [(ngModel)] ="age" class="form-control" minlength="6" required id="age" placeholder="Age">
+               <input ngModel [(ngModel)]="userInfo.age"  type="number" name="age"  class="form-control" minlength="6" required id="age" placeholder="Age">
               </div>
             </div>
             <div class="form-group text-center">

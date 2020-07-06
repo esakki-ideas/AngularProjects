@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
-import { User } from 'src/app/user';
+import { User } from 'src/app/user/user';
+import { FormData } from 'src/app/data/form-data.model';
 
 @Component({
   selector: 'app-user-list',
@@ -8,7 +9,8 @@ import { User } from 'src/app/user';
 })
 export class UserListComponent implements OnInit {
 
-  @Input() users: User;
+  @Input() users: FormData;
+  searchKey : any = '';
   // @Output() getSelectedUserFromList : EventEmitter<any> = new EventEmitter();
   constructor() { }
 

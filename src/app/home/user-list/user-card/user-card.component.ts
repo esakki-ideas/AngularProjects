@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output , EventEmitter} from '@angular/core';
-import { User } from 'src/app/user';
+import { User } from 'src/app/user/user';
 import { Router } from '@angular/router';
+import { FormDataService } from 'src/app/data/form-data.service';
+import { FormData } from 'src/app/data/form-data.model';
 
 @Component({
   selector: 'app-user-card',
@@ -9,16 +11,18 @@ import { Router } from '@angular/router';
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() user:User;
+  formData : FormDataService;
+  @Input() user: FormData;
   // @Output() getSelecteduserFromCard : EventEmitter<any> = new EventEmitter();
-  constructor(private router: Router ) { }
+  constructor(private router: Router, private formDataService : FormDataService ) { }
 
   ngOnInit(): void {
   }
 
   selectedUser = (user) => {
     // this.getSelecteduserFromCard.emit(user);
-    this.router.navigate(['users']);
+    this.formDataService.setFormData(user);
+    this.router.navigate(['detail']);
   }
 
 }
