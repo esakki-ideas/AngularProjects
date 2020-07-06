@@ -16,6 +16,9 @@ import { UserCardComponent } from './home/user-list/user-card/user-card.componen
 import { NavBarComponent } from './user/nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PhoneMaskDirective } from './phone-mask-directive.directive';
+import { FormDataService }    from './data/form-data.service';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { SearchPipePipe } from './pipes/search-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { PhoneMaskDirective } from './phone-mask-directive.directive';
     HeaderComponent,
     UserCardComponent,
     NavBarComponent,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    UserDetailComponent,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { PhoneMaskDirective } from './phone-mask-directive.directive';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers:    [{ provide: FormDataService, useClass: FormDataService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

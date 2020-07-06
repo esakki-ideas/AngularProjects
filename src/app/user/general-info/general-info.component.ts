@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormControl } from '@angular/forms';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import * as $ from 'jquery';
+import { FormDataService } from 'src/app/data/form-data.service';
+import { GeneralInfo } from './gernal-info.model';
+// import * as $ from 'jquery';
+
 @Component({
   selector: 'app-general-info',
   templateUrl: './general-info.component.html',
@@ -9,9 +12,11 @@ import * as $ from 'jquery';
 })
 export class GeneralInfoComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  contactInfo : GeneralInfo = new GeneralInfo();
+  constructor(private route: Router, private formDataService : FormDataService) { }
 
   ngOnInit(): void {
+    this.contactInfo = this.formDataService.getGeneralInfo();
   }
   
   
@@ -27,13 +32,14 @@ export class GeneralInfoComponent implements OnInit {
 // $('[type="tel"]').keyup(phoneMask);
 
 contactInfoForm = new FormGroup({
-  email : new FormControl(''),
+  email : new FormControl('', [Validators.required]),
   phone : new FormControl(''),
   socialInfo : new FormControl('')
 });
 
 goToNext() {
   console.log('wefda ', this.contactInfoForm);
+  this.formDataService.setGeneralInfo(this.contactInfo);
   this.route.navigate(['skill']);
 }
 

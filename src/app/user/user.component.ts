@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import * as moment from 'moment';
+import { User } from './user.model';
+import { FormDataService } from '../data/form-data.service';
 
 @Component({
   selector: 'app-user',
@@ -10,30 +12,34 @@ import * as moment from 'moment';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private formDataService : FormDataService) {}
 
-  fullName: String;
-  age: Number;
-  dob :String;
+  userInfo : User = new User();
+  // fullName: String;
+  // age: Number;
+  // dob :String;
   ngOnInit(): void {
+    this.userInfo = this.formDataService.getUserInfo();
   }
 
   goToNext(form: NgForm) {
     console.log('form data', form);
+    console.log('form userInfo', this.userInfo);
+    this.formDataService.setUserInfo(this.userInfo);
     this.route.navigate(['info']);
   }
 
   generateFullName(form: NgForm) {
     console.log(form.value);
-    form.value.fullName = this.fullName = form.value.firstName + ' ' + form.value.lastName
+    form.value.fullName = this.userInfo.fullName = form.value.firstName + ' ' + form.value.lastName
     
   }
 
   generateAge(form : NgForm) {
    const dob = moment(new Date(form.value.dateOfBirth), 'YYYY-MM-DD');
    var diffDays = moment().diff(dob, 'days');
-   this.age = Math.floor(diffDays/365);
-   console.log(this.age, diffDays);
+   this.userInfo.age = Math.floor(diffDays/365);
+   console.log(this.userInfo.age, diffDays);
   }
 
   alphabetsOnly(event: KeyboardEvent) {

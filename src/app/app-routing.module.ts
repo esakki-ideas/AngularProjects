@@ -6,6 +6,7 @@ import { GeneralInfoComponent } from './user/general-info/general-info.component
 import { SkillInfoComponent } from './user/skill-info/skill-info.component';
 import { WorkInfoComponent } from './user/work-info/work-info.component';
 import { UserComponent } from './user/user.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 
 const routes: Routes = [  
@@ -18,6 +19,7 @@ const routes: Routes = [
 { path: 'skill',  component: SkillInfoComponent },
 // 5th Route
 { path: 'work', component: WorkInfoComponent },
+{ path: 'detail', component: UserDetailComponent },
 { path: '',   redirectTo: '/home', pathMatch: 'full' },
 // 6th Route
 { path: '**', component: HomeComponent }];
