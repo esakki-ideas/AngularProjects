@@ -1,11 +1,21 @@
 <div class="container-fluid pt-4">
     <div class="row">
         <div class="offset-sm-8 col-sm-4 col-12">
+            
+
+            <!-- <button  [(ngModel)]="orderKey" placeholder="Search Task" class="float-right"></button> -->
+        </div>
+        <!-- <div class="offset-sm-8 col-sm-4 col-12"> -->
+            <!-- <button class="btn btn-success btn-outline-rounded btn-info" [(ngModel)]="orderKey" (click)="changeOrder('dsc')"> Next </button> -->
+        <!-- </div> -->
+        <div class="offset-sm-8 col-sm-4 col-12">
+            <button class="btn btn-primary" (click)="changeOrder('asc')"><i class="fa fa-angle-up" ></i></button>
+            <button class="btn btn-primary" (click)="changeOrder('dsc')"> <i class="fa fa-angle-down"></i> </button>
             <input type="text"  [(ngModel)]="searchKey" placeholder="Search Task" class="float-right" />
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-4 col-12" *ngFor="let user of users | searchPipe : 'fullName' : searchKey">
+        <div class="col-sm-4 col-12" *ngFor="let user of users | searchPipe : 'fullName' : searchKey | orderBy : 'fullName' : orderKey">
             <app-user-card [user]= "user" ></app-user-card>
         </div>
     </div>

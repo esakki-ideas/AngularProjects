@@ -39,5 +39,5 @@ export class FormData {
     toDate: string = '';
     role: string = '';
     experience: number = 0;
-    phone: Number = 0;
+    phone: Number = 111;
 }

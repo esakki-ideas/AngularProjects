@@ -20,6 +20,7 @@ import { FormDataService }    from './data/form-data.service';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { SearchPipePipe } from './pipes/search-pipe.pipe';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { OrderByPipe } from './order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     PhoneMaskDirective,
     UserDetailComponent,
     SearchPipePipe,
-    PaginatorComponent
+    PaginatorComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

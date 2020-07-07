@@ -11,10 +11,15 @@ export class UserListComponent implements OnInit {
 
   @Input() users: FormData;
   searchKey : any = '';
+   orderKey : any = 'dsc';
   // @Output() getSelectedUserFromList : EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeOrder(key) {
+    this.orderKey = key;
   }
 
   // selectedUser= (user) =>{
