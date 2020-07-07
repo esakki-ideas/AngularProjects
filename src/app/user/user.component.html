@@ -20,15 +20,15 @@
               </div>
               <div class="form-group col-md-4 col-12">
                 <label for="dateOfBirth">Date Of Birth</label>
-                <input ngModel  [(ngModel)]="userInfo.dateOfBirth"  type="date" name="dateOfBirth"  (ngModelChange) = "generateAge(f)" min= "1940-01-01"  class="form-control" id="dateOfBirth" placeholder="Date Of Birth">
+                <input ngModel  [(ngModel)]="userInfo.dateOfBirth"  type="date" name="dateOfBirth" required (ngModelChange) = "generateAge(f)" min= "1940-01-01"  class="form-control" id="dateOfBirth" placeholder="Date Of Birth">
               </div>
               <div class="form-group col-md-4 col-12">
                 <label for="Age">Age</label>
-               <input ngModel [(ngModel)]="userInfo.age"  type="number" name="age"  class="form-control" minlength="6" required id="age" placeholder="Age">
+               <input ngModel [(ngModel)]="userInfo.age"  type="number" name="age" disabled class="form-control" minlength="6" required id="age" placeholder="Age">
               </div>
             </div>
             <div class="form-group text-center">
-                <button class="btn btn-success btn-outline-rounded btn-info" [disabled] = "f.invalid" (click)="goToNext(f)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                <button class="btn btn-primary" [disabled] = "f.invalid" (click)="goToNext(f)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
             </div>
           </div>
         </form>

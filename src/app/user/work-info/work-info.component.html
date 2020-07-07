@@ -19,11 +19,11 @@
               </div>
               <div class="form-group col-md-6 col-12">
                 <label for="fromDate">From Date</label>
-                <input [(ngModel)]="workInfo.fromDate" name="fromDate" ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="From Date" placeholder="From Date">
+                <input [(ngModel)]="workInfo.fromDate" name="fromDate" required ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="From Date" placeholder="From Date">
               </div>
               <div class="form-group col-md-6 col-12">
                 <label for="toDate">To Date</label>
-                <input [(ngModel)]="workInfo.toDate" name="toDate" ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="To Date" placeholder="To Date">
+                <input [(ngModel)]="workInfo.toDate" name="toDate" required ngModel type="date" (ngModelChange) = "generateExperience(f)" class="form-control" id="To Date" placeholder="To Date">
               </div>
               <div class="form-group col-md-6 col-12">
                 <label for="Country">Role</label>
@@ -35,9 +35,9 @@
               </div>
             </div>
             <div class="form-group text-center">
-                <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="f.invalid" (click)="submitFormData(f)"> Submit <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                <button class="btn btn-primary" [disabled]="f.invalid" (click)="submitFormData(f)"> Submit <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
                 <span style="margin-left: 5px;"></span>
-                <button class="btn btn-success btn-outline-rounded btn-info"  (click)="goToPrevious(f)"> Previous <span style="margin-left:12px;" class="glyphicon glyphicon-arrow-left"></span></button>
+                <button class="btn btn-primary"  (click)="goToPrevious(f)"> Previous <span style="margin-left:12px;" class="glyphicon glyphicon-arrow-left"></span></button>
             </div>
           </div>
         </form>

@@ -17,4 +17,8 @@ export class UserDetailComponent implements OnInit {
     this.formData = this.formDataServices.getFormData();
   }
 
+  phoneNumberChange(phone : Number) {
+    this.formData.phone = phone;
+  }
+
 }

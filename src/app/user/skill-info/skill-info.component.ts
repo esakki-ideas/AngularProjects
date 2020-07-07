@@ -38,4 +38,8 @@ export class SkillInfoComponent implements OnInit {
     this.route.navigate(['info']);
   }
 
+  deleteRow(index) {
+    this.skills.splice(index, 1);
+  }
+
 }
