@@ -42,4 +42,40 @@ export class SkillInfoComponent implements OnInit {
     this.skills.splice(index, 1);
   }
 
+  skillInfos : any[] = [
+    'Angular',
+    'Reacts',
+    'SpringBo0t',
+    'MS Asure',
+    'Docker'
+  ]
+
+  userData: any[] = [];
+  lastkeydown1: number = 0;
+  subscription: any;
+  dataList: any[];
+
+  searchAutoCompleted($event) {
+    let info = (<HTMLInputElement>document.getElementById('socialInfo')).value;
+    this.dataList = [];
+
+    if (info.length > 2) {
+      // if ($event.timeStamp - this.lastkeydown1 > 200) {
+        this.dataList = this.searchFromArray(this.skillInfos, info);
+        if(this.dataList.length === 0){
+          this.skillInfos.push(info);
+        }
+    }
+  }  
+
+  searchFromArray(arr, regex) {
+    let matches = [], i;
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i].match(regex)) {
+        matches.push(arr[i]);
+      }
+    }
+    return matches;
+  };
+
 }

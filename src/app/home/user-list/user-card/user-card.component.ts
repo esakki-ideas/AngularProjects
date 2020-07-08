@@ -25,4 +25,9 @@ export class UserCardComponent implements OnInit {
     this.router.navigate(['detail']);
   }
 
+  editUser = (user) => {
+    this.formDataService.setFormData(user);
+    this.router.navigate(['users']);
+  }
+
 }
